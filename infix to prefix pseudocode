@@ -1,0 +1,19 @@
+FUNCTION infixToPrefix(expression):
+
+    // Step 1: Reverse the expression
+    REVERSE expression
+
+    // Step 2: Swap brackets
+    FOR each character ch in expression:
+        IF ch == '(':
+            REPLACE with ')'
+        ELSE IF ch == ')':
+            REPLACE with '('
+
+    // Step 3: Convert to postfix
+    postfix = infixToPostfix(expression)
+
+    // Step 4: Reverse postfix to get prefix
+    prefix = REVERSE postfix
+
+    RETURN prefix
